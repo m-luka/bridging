@@ -5,3 +5,9 @@ class HomePageTest(TestCase):
     def test_uses_home_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'blog/base.html')
+        
+class CVPageTest(TestCase):
+
+    def test_uses_cv_home_template(self):
+        response = self.client.get('/cv')
+        self.assertTemplateUsed(response, 'blog/base.html', 'blog/cv.html')

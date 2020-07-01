@@ -19,6 +19,18 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Bridging coursework', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text  
         self.assertIn('My blog', header_text)
+        
+        # Check form
+
+        # Check input
+        
+        # Check the page updates and the page lists the item
+        
+        # Text box still there, another CV item input
+		
+		# The page updates again, and now shows both items
+		
+		# Visit unique URL - items still there.
 
 
 
