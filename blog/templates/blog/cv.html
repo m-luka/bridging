@@ -2,4 +2,10 @@
 
 {% block content %}
     <h2>CV</h2>
+    <form method="POST">
+	    {% csrf_token %}
+	    <input name="item_text" id="id_new_item" placeholder="Enter a CV item" />
+	</form>
+
+	<table id="id_list_table">
 {% endblock %}
