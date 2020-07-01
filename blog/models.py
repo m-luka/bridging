@@ -16,3 +16,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CV(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    education = models.TextField()
+    experience = models.TextField()
+    skills = models.TextField()
+
+    def submit(self):
+        self.save()
+
+    def __str__(self):
+        return self.title
