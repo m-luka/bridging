@@ -13,7 +13,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_cv_page(self):
         # Check cv page
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost:8000/cv')
 
         # Check title
         self.assertIn('Bridging coursework', self.browser.title)
