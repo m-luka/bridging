@@ -1,11 +1,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h2>CV</h2>
-    <form method="POST">
-	    {% csrf_token %}
-	    <input name="item_text" id="id_new_item" placeholder="Enter a CV item" />
-	</form>
+{% for cv in cvs %}
+    <h1>CV</h1>
+    <div class="post-preview">
+        <h2 class="post-title">Education</h2>
+        <p>{{ cv.education }}</p>
+        
+        <h2 class="post-title">Experience</h2>
+        <p>{{ cv.experience }}</p>
+        
+        <h2 class="post-title">Skills</h2>
+        <p>{{ cv.skills }}</p>
 
-	<table id="id_list_table">
+    </div>
+{% endfor%}
 {% endblock %}

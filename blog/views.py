@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
+from .models import CV
 from .forms import PostForm
 
 # Create your views here.
@@ -41,4 +42,5 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
     
 def cv(request):
-    return render(request, 'blog/cv.html')
+    cvs = CV.objects.filter()
+    return render(request, 'blog/cv.html', {'cvs': cvs})
