@@ -3,16 +3,22 @@
 {% block content %}
 {% for cv in cvs %}
     <h1>CV</h1>
+    <br><br>
     <div class="post-preview">
         <h2 class="post-title">Education</h2>
-        <p>{{ cv.education }}</p>
+        <p>{{ cv.education | linebreaksbr }}</p>
         
         <h2 class="post-title">Experience</h2>
-        <p>{{ cv.experience }}</p>
+        <p>{{ cv.experience | linebreaksbr }}</p>
         
         <h2 class="post-title">Skills</h2>
-        <p>{{ cv.skills }}</p>
+        <p>{{ cv.skills | linebreaksbr }}</p>
 
     </div>
 {% endfor%}
+
+{% if user.is_authenticated %}
+             <a class="btn btn-primary" href="{% url 'cv_edit' pk=1 %}">Edit cv</a>
+{% endif %}
+
 {% endblock %}
